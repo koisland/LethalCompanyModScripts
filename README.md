@@ -12,7 +12,7 @@ pixi install
 ### `set_equal_custom_dungeon_wts`
 Modifies a `LethalLevelLoader.cfg` so that custom dungeons have equal weights on all levels.
 ```bash
-python src/set_level_loader_vals.py \
+python src/set_equal_custom_dungeon_wts.py \
     -i test/LethalLevelLoader.cfg \
     -o test/ModLethalLevelLoader.cfg
 ```
@@ -25,6 +25,15 @@ git diff --no-index test/LethalLevelLoader.cfg test/ModLethalLevelLoader.cfg
 ```diff
  ## Add this Dungeon to a Level's randomization pool based on matching Level Tags. (Minimum: 0, Maximum: 999999)
  # Setting type: String
+@@ -121,7 +121,7 @@ Dungeon Injection Settings - Dynamic Route Price List = Default Values Were Empt
+ ## Enable This To Utilise Any Of The Configuration Options For 'LabFlow'
+ # Setting type: Boolean
+ # Default value: false
+-Enable Content Configuration = false
++Enable Content Configuration = true
+ 
+ ## Enable this to allow the following three settings to function.
+ # Setting type: Boolean
 @@ -155,7 +155,7 @@ Dungeon Injection Settings - Manual Mod Names List = Default Values Were Empty
  ## Add this Dungeon to a Level's randomization pool based on matching Level Names. (Minimum: 0, Maximum: 999999)
  # Setting type: String

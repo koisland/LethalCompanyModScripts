@@ -1,10 +1,6 @@
 import sys
 import argparse
 
-KEYS_TO_CHANGE = {
-    "Dungeon Injection Settings - Manual Level Names List",
-}
-
 def main():
     ap = argparse.ArgumentParser(description="Set custom dungeon values to be equal")
     ap.add_argument("-i", "--infile", required=True, help="Configfile")
@@ -32,7 +28,8 @@ def main():
                 continue
 
             k, v = line.split(" = ")
-            if k in KEYS_TO_CHANGE:
+            # Set weights
+            if k == "Dungeon Injection Settings - Manual Level Names List":
                 level_wts = {}
                 for level_wt in v.split(","):
                     level, wt = level_wt.split(":")
@@ -46,6 +43,10 @@ def main():
                 print(f"\tafter: {updated_v}", file=sys.stderr)
 
                 new_line = f"{k} = {updated_v}"
+                print(new_line, file=ofh)
+            # Use new config
+            elif k == "Enable Content Configuration":
+                new_line = f"{k} = true"
                 print(new_line, file=ofh)
             else:
                 print(line, file=ofh)

@@ -1,6 +1,5 @@
 import sys
 import argparse
-from collections import defaultdict
 
 KEYS_TO_CHANGE = {
     "Dungeon Injection Settings - Manual Level Names List",
@@ -15,7 +14,6 @@ def main():
     infile = args.infile
     outfile = args.outfile 
 
-    level_cfg = defaultdict(dict)
     with (
         open(infile) as fh,
         open(outfile, "wt") if args.outfile else sys.stdout as ofh

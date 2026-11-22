@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Keith <koshima789@gmail.com>"]
+channels = ["conda-forge"]
+name = "LethalCompanyModScripts"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.15.2,<3.16"
